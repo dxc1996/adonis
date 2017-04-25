@@ -21,7 +21,6 @@ class PostsController {
 
   * store (request, response) {
     const postData = request.only('title','content')
-
     const rules = {
       title:'required',
       content:'required'
@@ -35,7 +34,6 @@ class PostsController {
       response.redirect('back')
       return
     }
-
     yield Post.create(postData)
     response.redirect('/')
   }
